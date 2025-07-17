@@ -28,46 +28,96 @@ const plans = [
 
 const Pricing = () => {
   const cardsRef = useRef([]);
+  const headingRef = useRef();
+  const paraRef = useRef();
 
   useEffect(() => {
+    // Heading Animation
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50, scale: 0.9, rotateX: 10 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        duration: 1.2,
+        ease: 'expo.out',
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none reset',
+        },
+      }
+    );
+
+    // Paragraph Animation
+    gsap.fromTo(
+      paraRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        delay: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: paraRef.current,
+          start: 'top 90%',
+          toggleActions: 'play none none reset',
+        },
+      }
+    );
+
+    // Card Animations (repeat on scroll)
     cardsRef.current.forEach((card, i) => {
       gsap.fromTo(
         card,
-        { opacity: 0, y: 60, rotateX: 15, skewY: 5 },
+        { opacity: 0, y: 60, rotateX: 20, skewY: 5 },
         {
           opacity: 1,
           y: 0,
           rotateX: 0,
           skewY: 0,
-          duration: 1.2,
+          duration: 1,
           ease: 'power4.out',
           scrollTrigger: {
             trigger: card,
             start: 'top 85%',
+            toggleActions: 'play none none reset',
           },
-          delay: i * 0.2,
+          delay: i * 0.1,
         }
       );
     });
   }, []);
 
   return (
-    <section className="relative bg-[#0A0E1C] text-white py-28 px-6 md:px-20 overflow-hidden z-0">
-      {/* Particle glow backdrop */}
-      <div className="absolute inset-0 overflow-hidden z-[-1]">
-        <div className="absolute w-96 h-96 bg-pink-500/20 rounded-full blur-[180px] top-[-50px] left-[-100px] animate-pulse" />
-        <div className="absolute w-72 h-72 bg-cyan-400/10 rounded-full blur-[120px] bottom-[-40px] right-[-100px] animate-pulse delay-200" />
+    <section className="relative bg-[#090B1C] text-white py-28 px-6 md:px-20 overflow-hidden z-0">
+      {/* Background Glow */}
+      <div className="absolute inset-0 z-[-1] pointer-events-none">
+        <div className="absolute w-[400px] h-[400px] bg-pink-500/20 rounded-full blur-[180px] top-[-50px] left-[-100px]" />
+        <div className="absolute w-[300px] h-[300px] bg-cyan-400/20 rounded-full blur-[150px] bottom-[-80px] right-[-120px]" />
       </div>
 
+      {/* Heading */}
       <div className="text-center mb-20 max-w-4xl mx-auto">
-        <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-fadeInUp">
+        <h2
+          ref={headingRef}
+          className="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-transparent bg-clip-text"
+        >
           Our AI Plans
         </h2>
-        <p className="text-gray-400 mt-6 text-lg leading-relaxed">
-          Choose the level of intelligence you need. Scale up when you're ready. Every plan is backed by the power of Kivo AI.
+        <p
+          ref={paraRef}
+          className="text-gray-400 mt-6 text-lg leading-relaxed"
+        >
+          Choose the level of intelligence you need. Scale up when you're ready.
+          Every plan is backed by the power of Kivo AI.
         </p>
       </div>
 
+      {/* Pricing Cards */}
       <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {plans.map((plan, idx) => (
           <div
@@ -103,9 +153,7 @@ const Pricing = () => {
             </ul>
 
             <button
-              className={`w-full py-3 cursor-pointer rounded-xl font-semibold transition-all duration-300 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm ${
-                plan.price === 'Custom' ? 'text-sm' : ''
-              }`}
+              className="w-full py-3 cursor-pointer rounded-xl font-semibold transition-all duration-300 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm"
             >
               {plan.price === 'Custom' ? 'Request Demo' : 'Get Started'}
             </button>
