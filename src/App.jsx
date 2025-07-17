@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
- <main className="bg-black w-autp overflow-x-hidden " >
+ <main className=" w-autp overflow-x-hidden " >
 <Navbar/>
 <Hero/>
 <Services/>
