@@ -3,7 +3,7 @@ import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoClose } from 'react-icons/io5';
-
+import ThemeToggle from './ThemeToggle';
 
 
 const navItems = ["Home", "About", "Features", "Pricing", "Contact"];
@@ -62,6 +62,7 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
+            <ThemeToggle/>
             <div className="flex gap-3 ml-4">
               <a
                 href="#signin"
