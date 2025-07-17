@@ -1,3 +1,4 @@
+import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 
 function App() {
@@ -5,8 +6,9 @@ function App() {
 
   return (
     <>
- <main className="w-autp overflow-x-hidden " >
+ <main className="bg-black w-autp overflow-x-hidden " >
 <Navbar/>
+<Hero/>
 
 
  </main>

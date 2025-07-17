@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoClose } from 'react-icons/io5';
 
-// ... [imports remain unchanged]
+
 
 const navItems = ["Home", "About", "Features", "Pricing", "Contact"];
 
@@ -50,8 +50,8 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="hidden md:flex h-full items-center gap-2">
-            <div className="flex gap-4">
+          <div className="hidden md:flex h-full items-center gap-1">
+            <div className="flex gap-2">
               {navItems.map((item, index) => (
                 <a
                   key={index}
