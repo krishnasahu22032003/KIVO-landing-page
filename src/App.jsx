@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-    <div className="bg-black text-red-300 "   >
+    <div className="bg-black text-p3"   >
 hello
     </div>
     </>
