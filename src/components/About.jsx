@@ -70,6 +70,7 @@ const About = () => {
 
   return (
     <section
+    id='about'
       ref={containerRef}
       className="relative bg-[#0A0E1C] text-white py-28 px-6 md:px-20 font-sans overflow-hidden"
     >

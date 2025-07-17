@@ -24,6 +24,7 @@ const CTA = () => {
         scrollTrigger: {
           trigger: el,
           start: 'top 80%',
+          toggleActions: 'play none none reset',
         },
       }
     );
@@ -40,6 +41,7 @@ const CTA = () => {
         scrollTrigger: {
           trigger: el,
           start: 'top 80%',
+          toggleActions: 'play none none reset',
         },
       }
     );
@@ -57,6 +59,7 @@ const CTA = () => {
         scrollTrigger: {
           trigger: el,
           start: 'top 80%',
+          toggleActions: 'play none none reset',
         },
       }
     );
@@ -64,6 +67,7 @@ const CTA = () => {
 
   return (
     <section
+    id='contact'
       ref={sectionRef}
       className="relative bg-gradient-to-br from-[#0A0E1C] via-[#0f172a] to-[#0A0E1C] text-white py-24 px-6 md:px-20 text-center overflow-hidden z-10"
     >

@@ -97,6 +97,7 @@ const Services = () => {
 
   return (
     <section
+    id='features'
       ref={sectionRef}
       className="relative py-32 px-6 md:px-20 bg-[#0b0f1f] text-white font-sans overflow-hidden"
     >

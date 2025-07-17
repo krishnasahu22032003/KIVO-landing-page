@@ -93,7 +93,7 @@ const Pricing = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#090B1C] text-white py-28 px-6 md:px-20 overflow-hidden z-0">
+    <section id='pricing' className="relative bg-[#090B1C] text-white py-28 px-6 md:px-20 overflow-hidden z-0">
       {/* Background Glow */}
       <div className="absolute inset-0 z-[-1] pointer-events-none">
         <div className="absolute w-[400px] h-[400px] bg-pink-500/20 rounded-full blur-[180px] top-[-50px] left-[-100px]" />
