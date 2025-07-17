@@ -12,49 +12,56 @@ const About = () => {
   const cardsRef = useRef([]);
 
   useEffect(() => {
+    // Animate content
     gsap.fromTo(
       contentRef.current,
-      { x: 100, opacity: 0 },
+      { x: 80, opacity: 0 },
       {
         x: 0,
         opacity: 1,
-        duration: 1.4,
+        duration: 1.2,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: contentRef.current,
-          start: 'top 80%',
+          start: 'top 85%',
+          toggleActions: 'play none none reverse',
         },
       }
     );
 
+    // Animate image with parallax scale effect
     gsap.fromTo(
       imageRef.current,
-      { scale: 0.9, opacity: 0 },
+      { scale: 0.95, opacity: 0 },
       {
         scale: 1,
         opacity: 1,
-        duration: 1.5,
+        duration: 1.3,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: imageRef.current,
-          start: 'top 85%',
+          start: 'top 90%',
+          toggleActions: 'play none none reverse',
         },
       }
     );
 
+    // Animate each card individually
     cardsRef.current.forEach((card, i) => {
       gsap.fromTo(
         card,
-        { y: 40, opacity: 0 },
+        { y: 60, opacity: 0, rotateX: -15 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          delay: i * 0.2,
-          ease: 'power2.out',
+          rotateX: 0,
+          duration: 1.1,
+          delay: i * 0.15,
+          ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: card,
-            start: 'top 85%',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse',
           },
         }
       );
