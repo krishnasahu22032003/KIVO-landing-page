@@ -1,12 +1,15 @@
+import Navbar from "./components/Navbar"
 
 function App() {
 
 
   return (
     <>
-    <div className="bg-black text-p3"   >
-hello
-    </div>
+ <main className="w-autp overflow-x-hidden " >
+<Navbar/>
+
+
+ </main>
     </>
   )
 }

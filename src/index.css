@@ -174,6 +174,58 @@ html {
 }
 
 
+@layer base{
+  .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+  .nav-hover-btn {
+    position: relative;
+    margin-inline-start: 2.5rem;
+    font-family: var(--font-general);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #e0f2fe;
+    cursor: pointer;
+  }
+
+  .text-gradient {
+  background: linear-gradient(to right, #d1d5db, #9ca3af, #6b7280); /* light to deep gray */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+  .nav-hover-btn::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--color-blue-100);
+    transition: width 0.4s ease;
+    bottom: 0;
+    left: 0;
+  }
+
+  .nav-hover-btn:hover::after {
+    width: 100%;
+  }
+
+  .nav-hover-btn:hover {
+    color: var(--color-p3);
+  }
+
+  /* Floating Nav */
+  .floating-nav {
+    background-color: black;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(229, 231, 235, 0.2);
+  }
+}
+
+
 
 
 
