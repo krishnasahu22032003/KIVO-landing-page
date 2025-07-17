@@ -1,5 +1,6 @@
 import About from "./components/About"
 import CTA from "./components/CTA"
+import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import Pricing from "./components/Pricing"
@@ -17,6 +18,7 @@ function App() {
 <About/>
 <Pricing/>
 <CTA/>
+<Footer/>
  </main>
     </>
   )
