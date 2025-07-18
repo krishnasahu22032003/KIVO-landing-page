@@ -1,5 +1,4 @@
 import About from "./components/About"
-import Checking from "./components/Checking"
 import CTA from "./components/CTA"
 import Footer from "./components/Footer"
 import Hero from "./components/Hero"
@@ -20,7 +19,7 @@ function App() {
 <Pricing/>
 <CTA/>
 <Footer/>
-<Checking/>
+
  </main>
     </>
   )
